@@ -6,8 +6,6 @@ Bundler.require :default
 Bundler.require :development if development?
 
 require 'sinatra/reloader' if development?
-require 'action_pack'
-require 'action_view'
 
 module Sinatra
   class Base

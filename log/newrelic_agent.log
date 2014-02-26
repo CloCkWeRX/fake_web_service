@@ -1,0 +1,54 @@
+# Logfile created on 2014-02-26 11:19:03 +0530 by logger.rb/41954
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Reading configuration from 
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Enabling the Request Sampler.
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Environment: development
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : No known dispatcher detected.
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Application: development
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Installing Net instrumentation
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:19:03 +0530 INSuchitp.local (17102)] INFO : Finished instrumentation
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Reading configuration from 
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Enabling the Request Sampler.
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Environment: development
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : No known dispatcher detected.
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Application: development
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Installing Net instrumentation
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:19:20 +0530 INSuchitp.local (17133)] INFO : Finished instrumentation
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Reading configuration from 
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Enabling the Request Sampler.
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Environment: development
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : No known dispatcher detected.
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Application: development
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Installing Net instrumentation
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:19:56 +0530 INSuchitp.local (17190)] INFO : Finished instrumentation
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Reading configuration from 
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Enabling the Request Sampler.
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Environment: development
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : No known dispatcher detected.
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Application: development
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Installing Net instrumentation
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Finished instrumentation
+[02/26/14 11:20:14 +0530 INSuchitp.local (17216)] INFO : Doing deferred dependency-detection before Rack startup
