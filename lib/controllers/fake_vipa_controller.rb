@@ -1,5 +1,6 @@
 class FakeWebService::FakeVipaController < Sinatra::Base
 
-	get "/wsdl" do
+	post "/fake_wsdl.xml" do
+		status 200
 	end
 end
