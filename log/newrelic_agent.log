@@ -52,3 +52,72 @@
 [02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Installing deferred Rack instrumentation
 [02/26/14 11:20:13 +0530 INSuchitp.local (17216)] INFO : Finished instrumentation
 [02/26/14 11:20:14 +0530 INSuchitp.local (17216)] INFO : Doing deferred dependency-detection before Rack startup
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Reading configuration from 
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Enabling the Request Sampler.
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Environment: development
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : No known dispatcher detected.
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Application: development
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Installing Net instrumentation
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:31:43 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Finished instrumentation
+[02/26/14 11:31:44 +0530 insuchitp.corporate.thoughtworks.com (17451)] INFO : Doing deferred dependency-detection before Rack startup
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Reading configuration from 
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Enabling the Request Sampler.
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Environment: development
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : No known dispatcher detected.
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Application: development
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Installing Net instrumentation
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:36:16 +0530 insuchitp.corporate.thoughtworks.com (17589)] INFO : Finished instrumentation
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Reading configuration from 
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Enabling the Request Sampler.
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Environment: development
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : No known dispatcher detected.
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Application: development
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Installing Net instrumentation
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:36:32 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Finished instrumentation
+[02/26/14 11:36:33 +0530 insuchitp.corporate.thoughtworks.com (17619)] INFO : Doing deferred dependency-detection before Rack startup
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Reading configuration from 
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Enabling the Request Sampler.
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Environment: development
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : No known dispatcher detected.
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Application: development
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Installing Net instrumentation
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Finished instrumentation
+[02/26/14 11:37:11 +0530 insuchitp.corporate.thoughtworks.com (17653)] INFO : Doing deferred dependency-detection before Rack startup
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Starting the New Relic agent in "development" environment.
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Reading configuration from 
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] ERROR : Unable to read configuration file : Is a directory - /Users/Suchit/projects/htw/code/htw-all/fake_web_service
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Enabling the Request Sampler.
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Environment: development
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : No known dispatcher detected.
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Application: development
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Installing Net instrumentation
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Installing Sinatra instrumentation
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Installing deferred Rack instrumentation
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Finished instrumentation
+[02/26/14 11:38:21 +0530 insuchitp.corporate.thoughtworks.com (17705)] INFO : Doing deferred dependency-detection before Rack startup

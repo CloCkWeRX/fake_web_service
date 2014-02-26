@@ -22,7 +22,8 @@ module FakeWebService
 
   def self.routes_map
     {
-        "/" => FakeWebService::App
+        "/" => FakeWebService::App,
+        "/vipa/" => FakeWebService::FakeVipaController
     }
   end
 end
