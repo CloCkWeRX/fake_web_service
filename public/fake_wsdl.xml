@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions targetNamespace="urn:DefaultNamespace" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:impl="urn:DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:message name="NEWINSTRUCTIONResponse"></wsdl:message>
-  <wsdl:message name="NEWINSTRUCTIONRequest"></wsdl:message>\
+  <wsdl:message name="NEWINSTRUCTIONRequest"></wsdl:message>
   <wsdl:portType name="StormTest">
     <wsdl:operation name="NEWINSTRUCTION">
       <wsdl:input message="impl:NEWINSTRUCTIONRequest" name="NEWINSTRUCTIONRequest"/>
