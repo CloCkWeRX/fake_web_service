@@ -1,5 +1,5 @@
 class VipaController < ApplicationController
-  soap_service namespace: 'urn:WashOut', wsdl_style: 'document', wsse_username: 'test', wsse_password: 'test'
+  soap_service namespace: 'urn:WashOut', wsdl_style: 'document'
 
   soap_action "SUBMITVALUATION",
               args: [:string],

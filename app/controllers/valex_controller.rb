@@ -1,5 +1,5 @@
 class ValexController < ApplicationController
-  soap_service namespace: 'urn:WashOut', wsdl_style: 'document', wsse_username: 'test', wsse_password: 'test'
+  soap_service namespace: 'urn:WashOut', wsdl_style: 'document'
 
   def actionUpdateFeeApproval
     render soap: "0" and return
