@@ -1,4 +1,4 @@
-class FakeWebService::FakeValexController < Sinatra::Base
+class ValexController < ApplicationController
   soap_service namespace: 'urn:WashOut', wsdl_style: 'document', wsse_username: 'test', wsse_password: 'test'
 
   def actionUpdateFeeApproval

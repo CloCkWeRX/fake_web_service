@@ -1,9 +1,6 @@
-require 'bundler'
-Bundler.require
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-ENV['RACK_ENV'] ||= 'development'
-require 'ci_tasks' if ['development', 'test'].include? ENV['RACK_ENV']
+require File.expand_path('../config/application', __FILE__)
 
-task :default => :spec
-
-Dir[File.join(File.dirname(__FILE__), 'tasks/*.rake')].each { |f| load f }
+FakeWebService::Application.load_tasks
