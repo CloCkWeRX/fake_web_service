@@ -1,13 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+gem 'rails', '4.0.3'
 gem 'thin'
 gem 'rake'
 
 gem 'psych'
 gem 'rabl'
 gem 'settingslogic'
-gem 'sinatra_rest', git: 'git@bitbucket.org:herron_todd_white/sinatra_rest.git'
 gem 'wash_out', git: 'https://github.com/CloCkWeRX/wash_out.git'
 
 group :test, :development do
