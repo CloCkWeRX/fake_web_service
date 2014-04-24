@@ -63,4 +63,14 @@ class VipaController < ApplicationController
 
     render soap: "0" and return
   end
+
+  soap_action "NEWINSTRUCTION",
+              args: [:string],
+              return: :string
+  def NEWINSTRUCTION
+    # raw_payload = env['wash_out.soap_data']
+    # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
+
+    render soap: "0" and return
+  end
 end
