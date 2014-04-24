@@ -8,6 +8,7 @@ gem 'psych'
 gem 'rabl'
 gem 'settingslogic'
 gem 'sinatra_rest', git: 'git@bitbucket.org:herron_todd_white/sinatra_rest.git'
+gem 'wash_out', git: 'https://github.com/CloCkWeRX/wash_out.git'
 
 group :test, :development do
   gem 'bundler-audit'

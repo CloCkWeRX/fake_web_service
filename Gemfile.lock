@@ -22,6 +22,13 @@ GIT
       newrelic_rpm
       yell
 
+GIT
+  remote: https://github.com/CloCkWeRX/wash_out.git
+  revision: c258cd6cfff6bbd3166e0adf98e939caae98570a
+  specs:
+    wash_out (0.9.1)
+      nori (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,6 +99,7 @@ GEM
     multi_json (1.8.4)
     newrelic_rpm (3.7.2.195)
     nio4r (1.0.0)
+    nori (2.4.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -202,4 +210,5 @@ DEPENDENCIES
   thin
   timecop
   vcr
+  wash_out!
   webmock
