@@ -60,7 +60,7 @@ class ValexController < ApplicationController
   soap_action "provideQuote",
               args: [:string],
               return: :string
-  def provideQuote(xml)
+  def provideQuote
     render soap: "0" and return
   end
 
@@ -68,7 +68,7 @@ class ValexController < ApplicationController
   soap_action "rejectQuote",
               args: [:string],
               return: :string
-  def rejectQuote(xml)
+  def rejectQuote
     render soap: "0" and return
   end
 
@@ -84,7 +84,7 @@ class ValexController < ApplicationController
   soap_action "statusUpdate",
               args: [:string],
               return: :string
-  def statusUpdate(xml)
+  def statusUpdate
     # raw_payload = env['wash_out.soap_data']
     # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
 
@@ -107,7 +107,7 @@ class ValexController < ApplicationController
   soap_action "submitValuation",
               args: [:string],
               return: :string
-  def submitValuation(xml)
+  def submitValuation
     render soap: "0" and return
   end
 

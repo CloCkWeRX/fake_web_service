@@ -4,7 +4,7 @@ class VipaController < ApplicationController
   soap_action "SUBMITVALUATION",
               args: [:string],
               return: :string
-  def SUBMITVALUATION(xml)
+  def SUBMITVALUATION
     # raw_payload = env['wash_out.soap_data']
     # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
 
@@ -15,7 +15,7 @@ class VipaController < ApplicationController
   soap_action "UPDATE",
               args: [:string],
               return: :string
-  def UPDATE(xml)
+  def UPDATE
     # raw_payload = env['wash_out.soap_data']
     # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
 
@@ -26,7 +26,7 @@ class VipaController < ApplicationController
   soap_action "CLARITYPROVIDED",
               args: [:string],
               return: :string
-  def CLARITYPROVIDED(xml)
+  def CLARITYPROVIDED
     # raw_payload = env['wash_out.soap_data']
     # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
 
@@ -36,7 +36,7 @@ class VipaController < ApplicationController
   soap_action "QUOTEREQUEST",
               args: [:string],
               return: :string
-  def QUOTEREQUEST(xml)
+  def QUOTEREQUEST
     # raw_payload = env['wash_out.soap_data']
     # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
 
@@ -47,7 +47,7 @@ class VipaController < ApplicationController
   soap_action "UPDATE",
               args: [:string],
               return: :string
-  def UPDATE(xml)
+  def UPDATE
     # raw_payload = env['wash_out.soap_data']
     # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
 
@@ -57,7 +57,7 @@ class VipaController < ApplicationController
   soap_action "CANCEL",
               args: [:string],
               return: :string
-  def CANCEL(xml)
+  def CANCEL
     # raw_payload = env['wash_out.soap_data']
     # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
 
