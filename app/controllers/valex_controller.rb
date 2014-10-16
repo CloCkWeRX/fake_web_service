@@ -17,6 +17,9 @@ class ValexController < ApplicationController
     render soap: "0" and return
   end
 
+  soap_action "addContactingNote",
+              args: [:string, :string],
+              return: :string
   def addContactingNote
     render soap: "0" and return
   end
