@@ -44,8 +44,27 @@ class ValexController < ApplicationController
     render soap: "0" and return
   end
 
+  soap_action "fetchSettings",
+              args: {:valexId => :string},
+              return: :string
+
   def fetchSettings
-    render soap: "0" and return
+    render soap: %Q{
+        <responseMessage xsi:type="xsd:string">
+           <?xml version="1.0" encoding="UTF-8"?>
+
+            <settings>
+
+              <ValExID>#{params[:valexId]}</ValExID>
+
+              <communicationPath>client</communicationPath>
+
+              <documentationPath>client</documentationPath>
+
+            </settings>
+         </responseMessage>
+
+      } and return  
   end
 
   def getRPDesktopSignOn
