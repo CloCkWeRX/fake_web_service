@@ -1,4 +1,10 @@
 class GoogleCalendarController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+  
+  def publish
+    render json: {}
+  end
+
   def events
     render json: JSON.parse('{
  "kind": "calendar#events",
