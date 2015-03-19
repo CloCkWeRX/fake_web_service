@@ -1,18 +1,30 @@
 class ValexController < ApplicationController
   soap_service namespace: 'urn:WashOut', wsdl_style: 'document'
 
+  soap_action "actionUpdateFeeApproval",
+              args: [:string, :string, :string, :string],
+              return: :string
   def actionUpdateFeeApproval
     render soap: "0" and return
   end
 
+  soap_action "actionUpdateReassignment",
+              args: [:string, :string, :string],
+              return: :string
   def actionUpdateReassignment
     render soap: "0" and return
   end
 
+  soap_action "actionUpdateServiceTypeWithFeeApproval",
+              args: [:string, :string, :string],
+              return: :string
   def actionUpdateServiceTypeWithFeeApproval
     render soap: "0" and return
   end
 
+  soap_action "addActionUpdate",
+              args: [:string, :string, :string],
+              return: :string
   def addActionUpdate
     render soap: "0" and return
   end
