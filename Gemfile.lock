@@ -1,6 +1,6 @@
 GIT
   remote: git@bitbucket.org:herron_todd_white/ci_tasks.git
-  revision: 846867eb26245bc27b04dc332b42625265fa5179
+  revision: 6e2a99d1622c58f67cdc64df78e29cff8f177b6e
   specs:
     ci_tasks (0.0.15)
       ci_reporter_rspec
