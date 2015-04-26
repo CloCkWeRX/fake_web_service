@@ -106,6 +106,9 @@ class ValexController < ApplicationController
     render soap: "0" and return
   end
 
+  soap_action 'removeActionUpdate',
+              args: [:string],
+              return: :string
   def removeActionUpdate
     render soap: "0" and return
   end
