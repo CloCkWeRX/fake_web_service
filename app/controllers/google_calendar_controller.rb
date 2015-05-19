@@ -6,6 +6,8 @@ class GoogleCalendarController < ApplicationController
   end
 
   def events
+    render(:nothing => true, :status => :no_content) and return if request.delete?
+
     render json: JSON.parse('{
  "kind": "calendar#events",
  "etag": "\"1419905948535000\"",
