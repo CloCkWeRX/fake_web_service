@@ -1,0 +1,2213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions targetNamespace="http://rpdata.com/bsg/schemas" xmlns:sch="http://rpdata.com/bsg/schemas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://rpdata.com/bsg/schemas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://rpdata.com/bsg/schemas" xmlns:bsg="http://rpdata.com/bsg/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="getAVMRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:bsgAvmRequestParams"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getAVMResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="faresCode" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresCondition" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresDescription" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresFSDScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresReferenceID" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresReportType" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresRunDate" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresValuationDate" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresValueEstimate" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresValueHigh" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresValueLow" type="xs:string"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="avmPropertyType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="H"/>
+					<xs:enumeration value="U"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="getConfigAVMRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="bathrooms" type="xs:int"/>
+								<xs:element minOccurs="0" name="bedrooms" type="xs:int"/>
+								<xs:element minOccurs="0" name="carSpaces" type="xs:int"/>
+								<xs:element minOccurs="0" name="floorAreaM2" type="xs:long"/>
+								<xs:element minOccurs="0" name="landAreaM2" type="xs:long"/>
+								<xs:element name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="propertyType" type="bsg:avmPropertyType"/>
+								<xs:element minOccurs="0" name="saleDate" type="xs:dateTime"/>
+								<xs:element minOccurs="0" name="salePrice" type="xs:int"/>
+								<xs:element minOccurs="0" name="valuationDate" type="xs:dateTime"/>
+								<xs:element minOccurs="0" name="yearBuilt" type="xs:int"/>
+								<xs:element minOccurs="0" name="craftsmanshipQuality" type="bsg:craftsmanshipQuality"/>
+								<xs:element name="customAVMName" type="bsg:customAVMNames"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="customAVMNames">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="LITEAVM"/>
+					<xs:enumeration value="UBANKAVM"/>
+					<xs:enumeration value="CONSUMERBANDEDAVM"/>
+					<xs:enumeration value="CONSUMERFUSIONVALRANGE"/>
+					<xs:enumeration value="CONSUMERAUTOVALRANGE"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="getConfigAVMResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="faresFSDScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="estimateValue" type="xs:string"/>
+								<xs:element minOccurs="0" name="valueRangeLow" type="xs:string"/>
+								<xs:element minOccurs="0" name="valueRangeHigh" type="xs:string"/>
+								<xs:element minOccurs="0" name="confidenceLevel" type="xs:string"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPDFAVMRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:bsgAvmRequestParams"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPDFAVMResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="pdf" type="bsg:base64Document"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getHybridAVMRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getHybridAVMResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="hybridCode" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridCondition" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridDescription" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridFSDScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridReferenceID" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridReportType" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridRunDate" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridValueEstimate" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridValueHigh" type="xs:string"/>
+								<xs:element minOccurs="0" name="hybridValueLow" type="xs:string"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getHybridPDFAVMRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getHybridPDFAVMResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="pdf" type="bsg:base64Document"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getRismarkAVMRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getRismarkAVMResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="rismarkCode" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkCondition" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkDescription" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkFSDScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkReferenceID" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkReportType" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkRunDate" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkValueEstimate" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkValueHigh" type="xs:string"/>
+								<xs:element minOccurs="0" name="rismarkValueLow" type="xs:string"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmProperties" nillable="true" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="otmPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="soldPropertiesAddressList" nillable="true" type="bsg:comparableAddress"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="doneTransactionRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="transactionName" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="doneTransactionResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseServiceResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="doneCMARequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="doneCMAResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseServiceResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getAddressMatchRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+								<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetDirection" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetEndAlpha" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetEndNumber" type="xs:int"/>
+								<xs:element minOccurs="0" name="streetExtension" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetStartAlpha" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetStartNumber" type="xs:int"/>
+								<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+								<xs:element minOccurs="0" name="unit" type="xs:int"/>
+								<xs:element minOccurs="0" name="unitAlpha" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getAddressMatchResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:suggestionListResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getAvailableAttributesForPropertyIdsRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyIdInput" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getAvailableAttributesForPropertyIdsResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyAttributeDefinitions" nillable="true" type="bsg:bsgPropertyAttributeDefinition"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getLookupValuesRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="lookupCode" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getLookupValuesResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseServiceResponse">
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="nameValuePairs" nillable="true" type="bsg:bsgNameValuePair"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyCoordinatesRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyCoordinatesResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="latitude" type="xs:double"/>
+								<xs:element minOccurs="0" name="longitude" type="xs:double"/>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyDetailRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyDetailResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="property" type="bsg:bsgPropertyDetail"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyAddressListFromSuggestionRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="searchString" type="xs:string"/>
+								<xs:element name="maxSuggestionResults" type="xs:int"/>
+								<xs:element minOccurs="0" name="includeUnits" type="xs:boolean"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyAddressListFromSuggestionResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyAddressListResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdFromEPReferenceRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="epReference" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdFromEPReferenceResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseServiceResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="progressPropertyId" type="bsg:bsgProgressPropertyId"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByExternalReferenceRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="externalReference" type="xs:string"/>
+								<xs:element minOccurs="0" name="externalReferenceTypeId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByExternalReferenceResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdListFromSuggestionRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="searchString" type="xs:string"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="searchCategory" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdListFromSuggestionResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByNameRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+								<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByNameResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertySummaryListByNameSuburbRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+								<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+								<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+								<xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+								<xs:element minOccurs="0" name="pageSize" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertySummaryListByNameSuburbResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="propertySummaryOwnerList" nillable="true" type="bsg:bsgPropertySummaryOwner"/>
+								<xs:element minOccurs="0" name="numberOfResults" type="xs:int"/>
+								<xs:element minOccurs="0" name="numberOfDistinctProperties" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="bsgPropertySummaryOwner">
+				<xs:complexContent>
+					<xs:extension base="bsg:bsgPropertySummary">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyOwners" nillable="true" type="bsg:bsgPropertyOwner"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="getPropertyIdsByPlanRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+								<xs:element minOccurs="0" name="lotAlpha" type="xs:string"/>
+								<xs:element minOccurs="0" name="lot" type="xs:string"/>
+								<xs:element minOccurs="0" name="plan" type="xs:string"/>
+								<xs:element minOccurs="0" name="planType" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByPlanResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByPropertyRadiusRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="radius" type="xs:double"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByPropertyRadiusResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByRadiusRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="latitude" type="xs:double"/>
+								<xs:element minOccurs="0" name="longitude" type="xs:double"/>
+								<xs:element minOccurs="0" name="radius" type="xs:double"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByRadiusResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByNearestNeighbourRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="nearestNeighbourLimit" type="xs:int"/>
+								<xs:element minOccurs="0" name="targetSuburbOnly" type="xs:boolean"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByNearestNeighbourResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="nearestNeighbours" nillable="true" type="bsg:bsgNearestNeighbour"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsBySectionRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="blockFrom" type="xs:int"/>
+								<xs:element minOccurs="0" name="blockTo" type="xs:int"/>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+								<xs:element minOccurs="0" name="partFrom" type="xs:int"/>
+								<xs:element minOccurs="0" name="partTo" type="xs:int"/>
+								<xs:element minOccurs="0" name="section" type="xs:int"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsBySectionResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsBySurveyPlanRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="surveyPlan" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsBySurveyPlanResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByTitleRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="title" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByTitleResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByTitleVolFolioRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+								<xs:element minOccurs="0" name="folioFrom" type="xs:int"/>
+								<xs:element minOccurs="0" name="folioTo" type="xs:int"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="titleRef" type="xs:string"/>
+								<xs:element minOccurs="0" name="volume" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsByTitleVolFolioResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsForAreaRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+								<xs:element minOccurs="0" name="endStreetNo" type="xs:int"/>
+								<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+								<xs:element minOccurs="0" name="startStreetNo" type="xs:int"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetEndAlpha" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetStartAlpha" type="xs:string"/>
+								<xs:element minOccurs="0" name="lgaName" type="xs:string"/>
+								<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+								<xs:element minOccurs="0" name="unitAlpha" type="xs:string"/>
+								<xs:element minOccurs="0" name="unitNo" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsForAreaResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsForAddressRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="unitNo" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetNo" type="xs:string"/>
+								<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+								<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsForAddressResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsForCompanyRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="companyName" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyIdsForCompanyResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertySummaryRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertySummaryResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertySummary" type="bsg:bsgPropertySummary"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertySummaryListRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyIdInput" type="bsg:propertyIdInput"/>
+								<xs:element minOccurs="0" name="sortType" type="xs:int"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertySummaryListResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="propertySummaryList" nillable="true" type="bsg:bsgPropertySummary"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getStreetListRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+								<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+								<xs:element minOccurs="0" name="state" type="xs:string"/>
+								<xs:element minOccurs="0" name="country" type="xs:string"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getStreetListResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="streets" nillable="true" type="bsg:bsgStreet"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getSuggestionListRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="searchString" type="xs:string"/>
+						<xs:element name="maxSuggestionResults" type="xs:int"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="searchCategories" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getSuggestionListResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:suggestionListResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="refinePropertiesRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyIdInput" type="bsg:propertyIdInput"/>
+								<xs:element minOccurs="0" name="propertySearchCriteriaInput" type="bsg:propertySearchCriteriaInput"/>
+								<xs:element minOccurs="0" name="sortType" type="xs:int"/>
+								<xs:element maxOccurs="unbounded" minOccurs="0" name="attributeFilterList" type="bsg:bsgPropertyAttributeFilter"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="refinePropertiesResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:propertyIdResponse"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyProfileReportRequest">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGRequest">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="runDate" type="xs:dateTime"/>
+								<xs:element minOccurs="0" name="propertyDetails" type="bsg:bsgPropertyProfileRequestDetails"/>
+								<xs:element minOccurs="0" name="customerDetails" type="bsg:bsgCustomerDetails"/>
+								<xs:element minOccurs="0" name="requesterDetails" type="bsg:bsgRequesterDetails"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPropertyProfileReportResponse">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="bsg:baseBSGResponse">
+							<xs:sequence>
+								<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+								<xs:element minOccurs="0" name="faresFSDScore" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresValueHigh" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresValueLow" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresResponse" type="xs:string"/>
+								<xs:element minOccurs="0" name="faresTrafficLight" type="xs:string"/>
+								<xs:element minOccurs="0" name="pdf" type="bsg:base64Document"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="propertySearchCriteriaInput">
+				<xs:complexContent>
+					<xs:extension base="bsg:genericSearchCriteriaInput">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="lastSalePriceFrom" type="xs:int"/>
+							<xs:element minOccurs="0" name="lastSalePriceTo" type="xs:int"/>
+							<xs:element minOccurs="0" name="reaRecentSale" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="saleDateFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="saleDateTo" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyDetail">
+				<xs:complexContent>
+					<xs:extension base="bsg:bsgPropertySummary">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="fullPropertyAttributes" nillable="true" type="bsg:bsgNameValuePair"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="listingList" nillable="true" type="bsg:bsgListing"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyOwners" nillable="true" type="bsg:bsgPropertyOwner"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyVendors" nillable="true" type="bsg:bsgPropertyVendors"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="rentalList" nillable="true" type="bsg:bsgRentalListing"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="salesHistoryList" nillable="true" type="bsg:bsgSaleHistory"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="statePropertyAttributes" nillable="true" type="bsg:bsgNameValuePair"/>
+							<xs:element minOccurs="0" name="propertyDetailAdditional" type="bsg:bsgPropertyDetailAdditional"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyDetailAdditional">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="category" type="xs:string"/>
+					<xs:element minOccurs="0" name="valuationRef" type="xs:string"/>
+					<xs:element minOccurs="0" name="titleRef" type="xs:string"/>
+					<xs:element minOccurs="0" name="wallMaterial" type="xs:string"/>
+					<xs:element minOccurs="0" name="roofMaterial" type="xs:string"/>
+					<xs:element minOccurs="0" name="landUse" type="xs:string"/>
+					<xs:element minOccurs="0" name="zone" type="xs:string"/>
+					<xs:element minOccurs="0" name="ownershipType" type="xs:string"/>
+					<xs:element minOccurs="0" name="tenure" type="xs:string"/>
+					<xs:element minOccurs="0" name="deck" type="xs:string"/>
+					<xs:element minOccurs="0" name="units" type="xs:int"/>
+					<xs:element minOccurs="0" name="siteCover" type="xs:int"/>
+					<xs:element minOccurs="0" name="improvementValue" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertySummary">
+				<xs:complexContent>
+					<xs:extension base="bsg:bsgPropertySummaryBase">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="propertySale" type="bsg:bsgPropertySale"/>
+							<xs:element minOccurs="0" name="reaAttribtes" type="bsg:bsgReaAttributes"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgRentalListing">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="agencyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="agencyPhone" type="xs:string"/>
+					<xs:element minOccurs="0" name="agentName" type="xs:string"/>
+					<xs:element minOccurs="0" name="agentPhone" type="xs:string"/>
+					<xs:element minOccurs="0" name="daysListed" type="xs:int"/>
+					<xs:element minOccurs="0" name="latestListDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="latestListedPrice" type="xs:double"/>
+					<xs:element minOccurs="0" name="listingTypeDescription" type="xs:string"/>
+					<xs:element minOccurs="0" name="period" type="xs:string"/>
+					<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+					<xs:element minOccurs="0" name="rentalAmount" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgSaleHistory">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseServiceResponse">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="agentAdvice" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="legacySaleId" type="xs:string"/>
+							<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+							<xs:element minOccurs="0" name="transferDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="transferId" type="xs:int"/>
+							<xs:element minOccurs="0" name="transferPrice" type="xs:int"/>
+							<xs:element minOccurs="0" name="transferType" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="vendors" nillable="true" type="bsg:bsgVendor"/>
+							<xs:element minOccurs="0" name="settlementDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="transferRelationship" type="xs:string"/>
+							<xs:element minOccurs="0" name="transferPriceValueRelationship" type="xs:string"/>
+							<xs:element minOccurs="0" name="armsLengthTransaction" type="xs:boolean"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="source" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgVendor">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="companyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+					<xs:element minOccurs="0" name="middleNames" type="xs:string"/>
+					<xs:element minOccurs="0" name="vendorId" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertySale">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="adviceFrom" type="xs:string"/>
+					<xs:element minOccurs="0" name="reaId" type="xs:string"/>
+					<xs:element minOccurs="0" name="reaRecentSale" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="transferDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="settlementDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="transferId" type="xs:int"/>
+					<xs:element minOccurs="0" name="transferPrice" type="xs:int"/>
+					<xs:element minOccurs="0" name="transferType" type="xs:string"/>
+					<xs:element minOccurs="0" name="transferRelationship" type="xs:string"/>
+					<xs:element minOccurs="0" name="transferPriceValueRelationship" type="xs:string"/>
+					<xs:element minOccurs="0" name="armsLengthTransaction" type="xs:boolean"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="source" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgReaAttributes">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="reaId" type="xs:string"/>
+					<xs:element minOccurs="0" name="reaRecentSale" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgProgressPropertyId">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseServiceResponse">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="entId" type="xs:int"/>
+							<xs:element minOccurs="0" name="entityType" type="xs:string"/>
+							<xs:element minOccurs="0" name="progressId" type="xs:string"/>
+							<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="suggestionListResponse">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseServiceResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="suggestions" nillable="true" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyAttributeDefinition">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attributeId" type="xs:long"/>
+					<xs:element minOccurs="0" name="attributeName" type="xs:string"/>
+					<xs:element minOccurs="0" name="dataType" type="bsg:bsgPropertyAttributeDataType"/>
+					<xs:element minOccurs="0" name="lookupCode" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgStreet">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="country" type="xs:string"/>
+					<xs:element minOccurs="0" name="displayAddress" type="xs:string"/>
+					<xs:element minOccurs="0" name="postcode" type="xs:string"/>
+					<xs:element minOccurs="0" name="state" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetAddress" type="xs:string"/>
+					<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyProfileRequestDetails">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="customerEstimate" type="xs:int"/>
+					<xs:element minOccurs="0" name="numberOfBedrooms" type="xs:int"/>
+					<xs:element minOccurs="0" name="numberOfBathrooms" type="xs:int"/>
+					<xs:element minOccurs="0" name="numberOfCarSpaces" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="comparableAddress">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+					<xs:element minOccurs="0" name="propertyType" type="xs:string"/>
+					<xs:element minOccurs="0" name="defaultPhoto" type="bsg:bsgPropertyDefaultPhoto"/>
+					<xs:element minOccurs="0" name="propertyAddress" type="bsg:bsgPropertyAddress"/>
+					<xs:element minOccurs="0" name="propertyAttributes" type="bsg:bsgPropertyAttributes"/>
+					<xs:element minOccurs="0" name="saleDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="saleDateFormatted" type="xs:string"/>
+					<xs:element minOccurs="0" name="saleType" type="xs:string"/>
+					<xs:element minOccurs="0" name="salePrice" type="xs:int"/>
+					<xs:element minOccurs="0" name="distanceFromTarget" type="xs:double"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgNearestNeighbour">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+					<xs:element minOccurs="0" name="distanceFromTarget" type="xs:double"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgAvmRequestParams">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseBSGRequest">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="bathrooms" type="xs:int"/>
+							<xs:element minOccurs="0" name="bedrooms" type="xs:int"/>
+							<xs:element minOccurs="0" name="carSpaces" type="xs:int"/>
+							<xs:element minOccurs="0" name="floorAreaM2" type="xs:long"/>
+							<xs:element minOccurs="0" name="landAreaM2" type="xs:long"/>
+							<xs:element name="propertyId" type="xs:int"/>
+							<xs:element minOccurs="0" name="propertyType" type="bsg:avmPropertyType"/>
+							<xs:element minOccurs="0" name="saleDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="salePrice" type="xs:int"/>
+							<xs:element minOccurs="0" name="valuationDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="yearBuilt" type="xs:int"/>
+							<xs:element minOccurs="0" name="craftsmanshipQuality" type="bsg:craftsmanshipQuality"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="propertyIdInput">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyIdList" nillable="true" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="genericSearchCriteriaInput">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseBSGRequest">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="bathrooms" nillable="true" type="xs:int"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="bedrooms" nillable="true" type="xs:int"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="carSpaces" nillable="true" type="xs:int"/>
+							<xs:element minOccurs="0" name="landSizeMax" type="xs:long"/>
+							<xs:element minOccurs="0" name="landSizeMin" type="xs:long"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyTypes" nillable="true" type="xs:string"/>
+							<xs:element minOccurs="0" name="floorSizeMax" type="xs:long"/>
+							<xs:element minOccurs="0" name="floorSizeMin" type="xs:long"/>
+							<xs:element minOccurs="0" name="capitalValueFrom" type="xs:int"/>
+							<xs:element minOccurs="0" name="capitalValueTo" type="xs:int"/>
+							<xs:element minOccurs="0" name="buildingAge" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="sortType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="field" type="xs:int"/>
+					<xs:element minOccurs="0" name="order" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyAttributeFilter">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attributeId" type="xs:long"/>
+					<xs:element minOccurs="0" name="type" type="bsg:bsgPropertyAttributeDataType"/>
+					<xs:element minOccurs="0" name="valueFrom" type="xs:string"/>
+					<xs:element minOccurs="0" name="valueTo" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyAttributeDataType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="dataType" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="propertyIdResponse">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseBSGResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyIdList" nillable="true" type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType abstract="true" name="baseBSGRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="sessionToken" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType abstract="true" name="baseBSGResponse">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseServiceResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="disclaimers" nillable="true" type="bsg:bsgDisclaimer"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType abstract="true" name="baseServiceResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="messages" nillable="true" type="bsg:applicationMessages"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgDisclaimer">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="code" type="xs:string"/>
+					<xs:element minOccurs="0" name="description" type="xs:string"/>
+					<xs:element minOccurs="0" name="title" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="applicationMessages">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="message" type="xs:string"/>
+					<xs:element minOccurs="0" name="messageKey" type="xs:string"/>
+					<xs:element minOccurs="0" name="messageType" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType abstract="true" name="bsgPropertySummaryBase">
+				<xs:complexContent>
+					<xs:extension base="bsg:applicationMessages">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="authorised" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="distanceFromTargetProp" type="xs:double"/>
+							<xs:element minOccurs="0" name="legacyExternalPropertyReference" type="bsg:bsgLegacyExternalPropertyReference"/>
+							<xs:element minOccurs="0" name="lowDoc" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="ownerName" type="xs:string"/>
+							<xs:element minOccurs="0" name="primaryPhotoThumbnail" type="xs:string"/>
+							<xs:element minOccurs="0" name="propertyAccess" type="bsg:bsgPropertyAccess"/>
+							<xs:element minOccurs="0" name="propertyAddress" type="bsg:bsgPropertyAddress"/>
+							<xs:element minOccurs="0" name="propertyAttributes" type="bsg:bsgPropertyAttributes"/>
+							<xs:element minOccurs="0" name="propertyCoords" type="bsg:bsgPropertyCoords"/>
+							<xs:element minOccurs="0" name="propertyDefaultPhoto" type="bsg:bsgPropertyDefaultPhoto"/>
+							<xs:element minOccurs="0" name="propertyDescriptors" type="bsg:bsgPropertyDescriptors"/>
+							<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+							<xs:element minOccurs="0" name="rowNumber" type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgLegacyExternalPropertyReference">
+				<xs:complexContent>
+					<xs:extension base="bsg:applicationMessages">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="externalPropertyRef" type="xs:string"/>
+							<xs:element minOccurs="0" name="state" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyAccess">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="accessControl" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="base64Document">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="data" type="xs:base64Binary"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyAddress">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="address" type="xs:string"/>
+					<xs:element minOccurs="0" name="countryCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="localityName" type="xs:string"/>
+					<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="propertyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="stateCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetDesignator" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetDirection" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetExtension" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+					<xs:element minOccurs="0" name="unitDesignator" type="xs:string"/>
+					<xs:element minOccurs="0" name="isDerivedUnitNumber" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="propertyAddress">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="propertyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="unitDesignator" type="xs:string"/>
+					<xs:element minOccurs="0" name="isDerivedUnitNumber" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="unitNumber" type="xs:int"/>
+					<xs:element minOccurs="0" name="unitAlpha" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetDesignator" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetNumber" type="xs:int"/>
+					<xs:element minOccurs="0" name="streetAlpha" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetExtension" type="xs:string"/>
+					<xs:element minOccurs="0" name="streetDirection" type="xs:string"/>
+					<xs:element minOccurs="0" name="postcode" type="xs:string"/>
+					<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+					<xs:element minOccurs="0" name="state" type="xs:string"/>
+					<xs:element minOccurs="0" name="country" type="xs:string"/>
+					<xs:element minOccurs="0" name="lgaName" type="xs:string"/>
+					<xs:element minOccurs="0" name="address" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyAttributes">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="allPropertyAttributes" type="xs:string"/>
+					<xs:element minOccurs="0" name="bathrooms" type="xs:int"/>
+					<xs:element minOccurs="0" name="bedrooms" type="xs:int"/>
+					<xs:element minOccurs="0" name="carSpaces" type="xs:int"/>
+					<xs:element minOccurs="0" name="landArea" type="xs:long"/>
+					<xs:element minOccurs="0" name="isCalculatedLandArea" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="floorArea" type="xs:int"/>
+					<xs:element minOccurs="0" name="lockUpGarage" type="xs:int"/>
+					<xs:element minOccurs="0" name="propertyAttributeSummary" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyCoords">
+				<xs:complexContent>
+					<xs:extension base="bsg:applicationMessages">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="latitude" type="xs:double"/>
+							<xs:element minOccurs="0" name="longitude" type="xs:double"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyDefaultPhoto">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="largeURL" type="xs:string"/>
+					<xs:element minOccurs="0" name="mediumURL" type="xs:string"/>
+					<xs:element minOccurs="0" name="thumbnailURL" type="xs:string"/>
+					<xs:element minOccurs="0" name="scanDate" type="xs:dateTime"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyDescriptors">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="accessControl" type="xs:string"/>
+					<xs:element minOccurs="0" name="externalPropertyRef" type="bsg:bsgLegacyExternalPropertyReference"/>
+					<xs:element minOccurs="0" name="landUsePrimary" type="xs:string"/>
+					<xs:element minOccurs="0" name="landUseSecondary" type="xs:string"/>
+					<xs:element minOccurs="0" name="lgaName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lotPlan" type="xs:string"/>
+					<xs:element minOccurs="0" name="ownerName" type="xs:string"/>
+					<xs:element minOccurs="0" name="propertyType" type="xs:int"/>
+					<xs:element minOccurs="0" name="propertyTypeCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="propertyTypeName" type="xs:string"/>
+					<xs:element minOccurs="0" name="categoryTypeName" type="xs:string"/>
+					<xs:element minOccurs="0" name="realPropertyDescriptor" type="xs:string"/>
+					<xs:element minOccurs="0" name="ucv" type="xs:int"/>
+					<xs:element minOccurs="0" name="ucvDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="zone" type="xs:string"/>
+					<xs:element minOccurs="0" name="zoneDescription" type="xs:string"/>
+					<xs:element minOccurs="0" name="age" type="xs:string"/>
+					<xs:element minOccurs="0" name="capitalValue" type="xs:int"/>
+					<xs:element minOccurs="0" name="valuationDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="mapReference" type="xs:string"/>
+					<xs:element minOccurs="0" name="volume" type="xs:string"/>
+					<xs:element minOccurs="0" name="folio" type="xs:string"/>
+					<xs:element minOccurs="0" name="section" type="xs:string"/>
+					<xs:element minOccurs="0" name="block" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgNameValuePair">
+				<xs:complexContent>
+					<xs:extension base="bsg:applicationMessages">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element minOccurs="0" name="value" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="bsgListing">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="agencyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="agencyPhone" type="xs:string"/>
+					<xs:element minOccurs="0" name="agentName" type="xs:string"/>
+					<xs:element minOccurs="0" name="agentPhone" type="xs:string"/>
+					<xs:element minOccurs="0" name="daysListed" type="xs:int"/>
+					<xs:element minOccurs="0" name="daysOnMarket" type="xs:int"/>
+					<xs:element minOccurs="0" name="latestListDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="latestListedPrice" type="xs:int"/>
+					<xs:element minOccurs="0" name="latestListedPriceDescription" type="xs:string"/>
+					<xs:element minOccurs="0" name="listingTypeDescription" type="xs:string"/>
+					<xs:element minOccurs="0" name="propertyId" type="xs:int"/>
+					<xs:element minOccurs="0" name="tradeMeListingId" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="statisticsChartResponse">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseBSGResponse">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="chartURL" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="propertyAddressListResponse">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseBSGResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="propertyAddressList" nillable="true" type="bsg:propertyAddressString"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="propertyAddressString">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="id" type="xs:int"/>
+					<xs:element minOccurs="0" name="address" type="xs:string"/>
+					<xs:element minOccurs="0" name="isDerivedUnitNumber" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="suburbDetail">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="country" type="xs:string"/>
+					<xs:element minOccurs="0" name="postcode" type="xs:string"/>
+					<xs:element minOccurs="0" name="state" type="xs:string"/>
+					<xs:element minOccurs="0" name="suburb" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="layerMapOptions">
+				<xs:complexContent>
+					<xs:extension base="bsg:baseMapOptions">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="showParks" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showPerimeter" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showPropertyLots" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showPropertyMeasurements" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showPropertyNumbers" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showRails" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showRoadNames" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showRoads" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="showWater" type="xs:boolean"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType abstract="true" name="baseMapOptions">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="mapSize" type="xs:string"/>
+					<xs:element minOccurs="0" name="zoomSize" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="propertyStatisticsOptions">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="showNumberSold12Mths" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showMedianSalePrice" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showMedianPriceChange12Mths" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showMedianPriceChange3Yrs" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showMedianPriceChange5Yrs" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showMedianPriceChange10Yrs" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showMedianAskingRent" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showIndicativeGrossRentalYield" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showTotalListings12Mths" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showTotalDwellings" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showPercentStockOnMarket12Mths" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showTimeOnMarketDays" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showTotalSalesValue12Mths" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showAvgHoldPeriodYears" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="showBroadPriceBands" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="propertyMapOptionType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="AERIAL"/>
+					<xs:enumeration value="CADASTRAL"/>
+					<xs:enumeration value="AUSWAY"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="bsgRequesterDetails">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="surname" type="xs:string"/>
+					<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+					<xs:element minOccurs="0" name="workPhone" type="xs:string"/>
+					<xs:element minOccurs="0" name="email" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgCustomerDetails">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="surname" type="xs:string"/>
+					<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="propertySaleDetails">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="saleDate" type="xs:date"/>
+					<xs:element minOccurs="0" name="salePrice" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="craftsmanshipQuality">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Much Better"/>
+					<xs:enumeration value="Better"/>
+					<xs:enumeration value="Slightly Better"/>
+					<xs:enumeration value="Average"/>
+					<xs:enumeration value="Slightly Worse"/>
+					<xs:enumeration value="Worse"/>
+					<xs:enumeration value="Much Worse"/>
+					<xs:enumeration value="No Response"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="valuationAttributes">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="bedrooms" type="xs:int"/>
+					<xs:element minOccurs="0" name="bathrooms" type="xs:int"/>
+					<xs:element minOccurs="0" name="carspaces" type="xs:int"/>
+					<xs:element minOccurs="0" name="estimatedValue" type="xs:int"/>
+					<xs:element minOccurs="0" name="propertySaleDetails" type="bsg:propertySaleDetails"/>
+					<xs:element minOccurs="0" name="yearBuilt" type="xs:int"/>
+					<xs:element minOccurs="0" name="floorAreaM2" type="xs:int"/>
+					<xs:element minOccurs="0" name="landAreaM2" type="xs:int"/>
+					<xs:element minOccurs="0" name="craftsmanshipQuality" type="bsg:craftsmanshipQuality"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyOwner">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="addressLine1" type="xs:string"/>
+					<xs:element minOccurs="0" name="addressLine2" type="xs:string"/>
+					<xs:element minOccurs="0" name="careOfText" type="xs:string"/>
+					<xs:element minOccurs="0" name="companyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lastTransferId" type="xs:int"/>
+					<xs:element minOccurs="0" name="ownerId" type="xs:int"/>
+					<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyVendors">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="addressLine1" type="xs:string"/>
+					<xs:element minOccurs="0" name="addressLine2" type="xs:string"/>
+					<xs:element minOccurs="0" name="careOfText" type="xs:string"/>
+					<xs:element minOccurs="0" name="companyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lastTransferId" type="xs:int"/>
+					<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="vendorId" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="bsgPropertyBuyer">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="addressLine1" type="xs:string"/>
+					<xs:element minOccurs="0" name="addressLine2" type="xs:string"/>
+					<xs:element minOccurs="0" name="careOfText" type="xs:string"/>
+					<xs:element minOccurs="0" name="companyName" type="xs:string"/>
+					<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+					<xs:element minOccurs="0" name="lastTransferId" type="xs:int"/>
+					<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="buyerId" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getStreetListRequest">
+		<wsdl:part element="tns:getStreetListRequest" name="getStreetListRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByExternalReferenceResponse">
+		<wsdl:part element="tns:getPropertyIdsByExternalReferenceResponse" name="getPropertyIdsByExternalReferenceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertySummaryListByNameSuburbResponse">
+		<wsdl:part element="tns:getPropertySummaryListByNameSuburbResponse" name="getPropertySummaryListByNameSuburbResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsBySurveyPlanRequest">
+		<wsdl:part element="tns:getPropertyIdsBySurveyPlanRequest" name="getPropertyIdsBySurveyPlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyProfileReportRequest">
+		<wsdl:part element="tns:getPropertyProfileReportRequest" name="getPropertyProfileReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdFromEPReferenceResponse">
+		<wsdl:part element="tns:getPropertyIdFromEPReferenceResponse" name="getPropertyIdFromEPReferenceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByRadiusRequest">
+		<wsdl:part element="tns:getPropertyIdsByRadiusRequest" name="getPropertyIdsByRadiusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPDFAVMRequest">
+		<wsdl:part element="tns:getPDFAVMRequest" name="getPDFAVMRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyCoordinatesRequest">
+		<wsdl:part element="tns:getPropertyCoordinatesRequest" name="getPropertyCoordinatesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getHybridPDFAVMRequest">
+		<wsdl:part element="tns:getHybridPDFAVMRequest" name="getHybridPDFAVMRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByPropertyRadiusResponse">
+		<wsdl:part element="tns:getPropertyIdsByPropertyRadiusResponse" name="getPropertyIdsByPropertyRadiusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getAVMResponse">
+		<wsdl:part element="tns:getAVMResponse" name="getAVMResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getSuggestionListRequest">
+		<wsdl:part element="tns:getSuggestionListRequest" name="getSuggestionListRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getStreetListResponse">
+		<wsdl:part element="tns:getStreetListResponse" name="getStreetListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getAVMRequest">
+		<wsdl:part element="tns:getAVMRequest" name="getAVMRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsForAddressRequest">
+		<wsdl:part element="tns:getPropertyIdsForAddressRequest" name="getPropertyIdsForAddressRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsForCompanyRequest">
+		<wsdl:part element="tns:getPropertyIdsForCompanyRequest" name="getPropertyIdsForCompanyRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsForAddressResponse">
+		<wsdl:part element="tns:getPropertyIdsForAddressResponse" name="getPropertyIdsForAddressResponse"/>
+	</wsdl:message>
+	<wsdl:message name="doneCMAResponse">
+		<wsdl:part element="tns:doneCMAResponse" name="doneCMAResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsForCompanyResponse">
+		<wsdl:part element="tns:getPropertyIdsForCompanyResponse" name="getPropertyIdsForCompanyResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyAddressListFromSuggestionResponse">
+		<wsdl:part element="tns:getPropertyAddressListFromSuggestionResponse" name="getPropertyAddressListFromSuggestionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByNearestNeighbourResponse">
+		<wsdl:part element="tns:getPropertyIdsByNearestNeighbourResponse" name="getPropertyIdsByNearestNeighbourResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByTitleVolFolioRequest">
+		<wsdl:part element="tns:getPropertyIdsByTitleVolFolioRequest" name="getPropertyIdsByTitleVolFolioRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getConfigAVMRequest">
+		<wsdl:part element="tns:getConfigAVMRequest" name="getConfigAVMRequest"/>
+	</wsdl:message>
+	<wsdl:message name="refinePropertiesResponse">
+		<wsdl:part element="tns:refinePropertiesResponse" name="refinePropertiesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByRadiusResponse">
+		<wsdl:part element="tns:getPropertyIdsByRadiusResponse" name="getPropertyIdsByRadiusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByPlanResponse">
+		<wsdl:part element="tns:getPropertyIdsByPlanResponse" name="getPropertyIdsByPlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertySummaryListResponse">
+		<wsdl:part element="tns:getPropertySummaryListResponse" name="getPropertySummaryListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getLookupValuesResponse">
+		<wsdl:part element="tns:getLookupValuesResponse" name="getLookupValuesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyProfileReportResponse">
+		<wsdl:part element="tns:getPropertyProfileReportResponse" name="getPropertyProfileReportResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByNameRequest">
+		<wsdl:part element="tns:getPropertyIdsByNameRequest" name="getPropertyIdsByNameRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdFromEPReferenceRequest">
+		<wsdl:part element="tns:getPropertyIdFromEPReferenceRequest" name="getPropertyIdFromEPReferenceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getRismarkAVMResponse">
+		<wsdl:part element="tns:getRismarkAVMResponse" name="getRismarkAVMResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsForAreaRequest">
+		<wsdl:part element="tns:getPropertyIdsForAreaRequest" name="getPropertyIdsForAreaRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertySummaryResponse">
+		<wsdl:part element="tns:getPropertySummaryResponse" name="getPropertySummaryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getConfigAVMResponse">
+		<wsdl:part element="tns:getConfigAVMResponse" name="getConfigAVMResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyDetailRequest">
+		<wsdl:part element="tns:getPropertyDetailRequest" name="getPropertyDetailRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAvailableAttributesForPropertyIdsRequest">
+		<wsdl:part element="tns:getAvailableAttributesForPropertyIdsRequest" name="getAvailableAttributesForPropertyIdsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyAddressListFromSuggestionRequest">
+		<wsdl:part element="tns:getPropertyAddressListFromSuggestionRequest" name="getPropertyAddressListFromSuggestionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyDetailResponse">
+		<wsdl:part element="tns:getPropertyDetailResponse" name="getPropertyDetailResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getHybridAVMRequest">
+		<wsdl:part element="tns:getHybridAVMRequest" name="getHybridAVMRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdListFromSuggestionResponse">
+		<wsdl:part element="tns:getPropertyIdListFromSuggestionResponse" name="getPropertyIdListFromSuggestionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertySummaryListByNameSuburbRequest">
+		<wsdl:part element="tns:getPropertySummaryListByNameSuburbRequest" name="getPropertySummaryListByNameSuburbRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByPropertyRadiusRequest">
+		<wsdl:part element="tns:getPropertyIdsByPropertyRadiusRequest" name="getPropertyIdsByPropertyRadiusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getRismarkAVMRequest">
+		<wsdl:part element="tns:getRismarkAVMRequest" name="getRismarkAVMRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAddressMatchRequest">
+		<wsdl:part element="tns:getAddressMatchRequest" name="getAddressMatchRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAvailableAttributesForPropertyIdsResponse">
+		<wsdl:part element="tns:getAvailableAttributesForPropertyIdsResponse" name="getAvailableAttributesForPropertyIdsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="doneCMARequest">
+		<wsdl:part element="tns:doneCMARequest" name="doneCMARequest"/>
+	</wsdl:message>
+	<wsdl:message name="refinePropertiesRequest">
+		<wsdl:part element="tns:refinePropertiesRequest" name="refinePropertiesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertySummaryRequest">
+		<wsdl:part element="tns:getPropertySummaryRequest" name="getPropertySummaryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPDFAVMResponse">
+		<wsdl:part element="tns:getPDFAVMResponse" name="getPDFAVMResponse"/>
+	</wsdl:message>
+	<wsdl:message name="doneTransactionRequest">
+		<wsdl:part element="tns:doneTransactionRequest" name="doneTransactionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdListFromSuggestionRequest">
+		<wsdl:part element="tns:getPropertyIdListFromSuggestionRequest" name="getPropertyIdListFromSuggestionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByNearestNeighbourRequest">
+		<wsdl:part element="tns:getPropertyIdsByNearestNeighbourRequest" name="getPropertyIdsByNearestNeighbourRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertySummaryListRequest">
+		<wsdl:part element="tns:getPropertySummaryListRequest" name="getPropertySummaryListRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getHybridPDFAVMResponse">
+		<wsdl:part element="tns:getHybridPDFAVMResponse" name="getHybridPDFAVMResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getAddressMatchResponse">
+		<wsdl:part element="tns:getAddressMatchResponse" name="getAddressMatchResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByTitleRequest">
+		<wsdl:part element="tns:getPropertyIdsByTitleRequest" name="getPropertyIdsByTitleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsBySectionResponse">
+		<wsdl:part element="tns:getPropertyIdsBySectionResponse" name="getPropertyIdsBySectionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getSuggestionListResponse">
+		<wsdl:part element="tns:getSuggestionListResponse" name="getSuggestionListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByExternalReferenceRequest">
+		<wsdl:part element="tns:getPropertyIdsByExternalReferenceRequest" name="getPropertyIdsByExternalReferenceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsBySurveyPlanResponse">
+		<wsdl:part element="tns:getPropertyIdsBySurveyPlanResponse" name="getPropertyIdsBySurveyPlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsBySectionRequest">
+		<wsdl:part element="tns:getPropertyIdsBySectionRequest" name="getPropertyIdsBySectionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByPlanRequest">
+		<wsdl:part element="tns:getPropertyIdsByPlanRequest" name="getPropertyIdsByPlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyCoordinatesResponse">
+		<wsdl:part element="tns:getPropertyCoordinatesResponse" name="getPropertyCoordinatesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getLookupValuesRequest">
+		<wsdl:part element="tns:getLookupValuesRequest" name="getLookupValuesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByNameResponse">
+		<wsdl:part element="tns:getPropertyIdsByNameResponse" name="getPropertyIdsByNameResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsForAreaResponse">
+		<wsdl:part element="tns:getPropertyIdsForAreaResponse" name="getPropertyIdsForAreaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="doneTransactionResponse">
+		<wsdl:part element="tns:doneTransactionResponse" name="doneTransactionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByTitleVolFolioResponse">
+		<wsdl:part element="tns:getPropertyIdsByTitleVolFolioResponse" name="getPropertyIdsByTitleVolFolioResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPropertyIdsByTitleResponse">
+		<wsdl:part element="tns:getPropertyIdsByTitleResponse" name="getPropertyIdsByTitleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getHybridAVMResponse">
+		<wsdl:part element="tns:getHybridAVMResponse" name="getHybridAVMResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="PropertyService">
+		<wsdl:operation name="getStreetList">
+			<wsdl:input message="tns:getStreetListRequest" name="getStreetListRequest"/>
+			<wsdl:output message="tns:getStreetListResponse" name="getStreetListResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByExternalReference">
+			<wsdl:input message="tns:getPropertyIdsByExternalReferenceRequest" name="getPropertyIdsByExternalReferenceRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByExternalReferenceResponse" name="getPropertyIdsByExternalReferenceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertySummaryListByNameSuburb">
+			<wsdl:input message="tns:getPropertySummaryListByNameSuburbRequest" name="getPropertySummaryListByNameSuburbRequest"/>
+			<wsdl:output message="tns:getPropertySummaryListByNameSuburbResponse" name="getPropertySummaryListByNameSuburbResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsBySurveyPlan">
+			<wsdl:input message="tns:getPropertyIdsBySurveyPlanRequest" name="getPropertyIdsBySurveyPlanRequest"/>
+			<wsdl:output message="tns:getPropertyIdsBySurveyPlanResponse" name="getPropertyIdsBySurveyPlanResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyProfileReport">
+			<wsdl:input message="tns:getPropertyProfileReportRequest" name="getPropertyProfileReportRequest"/>
+			<wsdl:output message="tns:getPropertyProfileReportResponse" name="getPropertyProfileReportResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdFromEPReference">
+			<wsdl:input message="tns:getPropertyIdFromEPReferenceRequest" name="getPropertyIdFromEPReferenceRequest"/>
+			<wsdl:output message="tns:getPropertyIdFromEPReferenceResponse" name="getPropertyIdFromEPReferenceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByRadius">
+			<wsdl:input message="tns:getPropertyIdsByRadiusRequest" name="getPropertyIdsByRadiusRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByRadiusResponse" name="getPropertyIdsByRadiusResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPDFAVM">
+			<wsdl:input message="tns:getPDFAVMRequest" name="getPDFAVMRequest"/>
+			<wsdl:output message="tns:getPDFAVMResponse" name="getPDFAVMResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyCoordinates">
+			<wsdl:input message="tns:getPropertyCoordinatesRequest" name="getPropertyCoordinatesRequest"/>
+			<wsdl:output message="tns:getPropertyCoordinatesResponse" name="getPropertyCoordinatesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getHybridPDFAVM">
+			<wsdl:input message="tns:getHybridPDFAVMRequest" name="getHybridPDFAVMRequest"/>
+			<wsdl:output message="tns:getHybridPDFAVMResponse" name="getHybridPDFAVMResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByPropertyRadius">
+			<wsdl:input message="tns:getPropertyIdsByPropertyRadiusRequest" name="getPropertyIdsByPropertyRadiusRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByPropertyRadiusResponse" name="getPropertyIdsByPropertyRadiusResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getAVM">
+			<wsdl:input message="tns:getAVMRequest" name="getAVMRequest"/>
+			<wsdl:output message="tns:getAVMResponse" name="getAVMResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getSuggestionList">
+			<wsdl:input message="tns:getSuggestionListRequest" name="getSuggestionListRequest"/>
+			<wsdl:output message="tns:getSuggestionListResponse" name="getSuggestionListResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsForAddress">
+			<wsdl:input message="tns:getPropertyIdsForAddressRequest" name="getPropertyIdsForAddressRequest"/>
+			<wsdl:output message="tns:getPropertyIdsForAddressResponse" name="getPropertyIdsForAddressResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsForCompany">
+			<wsdl:input message="tns:getPropertyIdsForCompanyRequest" name="getPropertyIdsForCompanyRequest"/>
+			<wsdl:output message="tns:getPropertyIdsForCompanyResponse" name="getPropertyIdsForCompanyResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="doneCMA">
+			<wsdl:input message="tns:doneCMARequest" name="doneCMARequest"/>
+			<wsdl:output message="tns:doneCMAResponse" name="doneCMAResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyAddressListFromSuggestion">
+			<wsdl:input message="tns:getPropertyAddressListFromSuggestionRequest" name="getPropertyAddressListFromSuggestionRequest"/>
+			<wsdl:output message="tns:getPropertyAddressListFromSuggestionResponse" name="getPropertyAddressListFromSuggestionResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByNearestNeighbour">
+			<wsdl:input message="tns:getPropertyIdsByNearestNeighbourRequest" name="getPropertyIdsByNearestNeighbourRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByNearestNeighbourResponse" name="getPropertyIdsByNearestNeighbourResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByTitleVolFolio">
+			<wsdl:input message="tns:getPropertyIdsByTitleVolFolioRequest" name="getPropertyIdsByTitleVolFolioRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByTitleVolFolioResponse" name="getPropertyIdsByTitleVolFolioResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getConfigAVM">
+			<wsdl:input message="tns:getConfigAVMRequest" name="getConfigAVMRequest"/>
+			<wsdl:output message="tns:getConfigAVMResponse" name="getConfigAVMResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="refineProperties">
+			<wsdl:input message="tns:refinePropertiesRequest" name="refinePropertiesRequest"/>
+			<wsdl:output message="tns:refinePropertiesResponse" name="refinePropertiesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByPlan">
+			<wsdl:input message="tns:getPropertyIdsByPlanRequest" name="getPropertyIdsByPlanRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByPlanResponse" name="getPropertyIdsByPlanResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertySummaryList">
+			<wsdl:input message="tns:getPropertySummaryListRequest" name="getPropertySummaryListRequest"/>
+			<wsdl:output message="tns:getPropertySummaryListResponse" name="getPropertySummaryListResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getLookupValues">
+			<wsdl:input message="tns:getLookupValuesRequest" name="getLookupValuesRequest"/>
+			<wsdl:output message="tns:getLookupValuesResponse" name="getLookupValuesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByName">
+			<wsdl:input message="tns:getPropertyIdsByNameRequest" name="getPropertyIdsByNameRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByNameResponse" name="getPropertyIdsByNameResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getRismarkAVM">
+			<wsdl:input message="tns:getRismarkAVMRequest" name="getRismarkAVMRequest"/>
+			<wsdl:output message="tns:getRismarkAVMResponse" name="getRismarkAVMResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsForArea">
+			<wsdl:input message="tns:getPropertyIdsForAreaRequest" name="getPropertyIdsForAreaRequest"/>
+			<wsdl:output message="tns:getPropertyIdsForAreaResponse" name="getPropertyIdsForAreaResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertySummary">
+			<wsdl:input message="tns:getPropertySummaryRequest" name="getPropertySummaryRequest"/>
+			<wsdl:output message="tns:getPropertySummaryResponse" name="getPropertySummaryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyDetail">
+			<wsdl:input message="tns:getPropertyDetailRequest" name="getPropertyDetailRequest"/>
+			<wsdl:output message="tns:getPropertyDetailResponse" name="getPropertyDetailResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getAvailableAttributesForPropertyIds">
+			<wsdl:input message="tns:getAvailableAttributesForPropertyIdsRequest" name="getAvailableAttributesForPropertyIdsRequest"/>
+			<wsdl:output message="tns:getAvailableAttributesForPropertyIdsResponse" name="getAvailableAttributesForPropertyIdsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getHybridAVM">
+			<wsdl:input message="tns:getHybridAVMRequest" name="getHybridAVMRequest"/>
+			<wsdl:output message="tns:getHybridAVMResponse" name="getHybridAVMResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdListFromSuggestion">
+			<wsdl:input message="tns:getPropertyIdListFromSuggestionRequest" name="getPropertyIdListFromSuggestionRequest"/>
+			<wsdl:output message="tns:getPropertyIdListFromSuggestionResponse" name="getPropertyIdListFromSuggestionResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getAddressMatch">
+			<wsdl:input message="tns:getAddressMatchRequest" name="getAddressMatchRequest"/>
+			<wsdl:output message="tns:getAddressMatchResponse" name="getAddressMatchResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="doneTransaction">
+			<wsdl:input message="tns:doneTransactionRequest" name="doneTransactionRequest"/>
+			<wsdl:output message="tns:doneTransactionResponse" name="doneTransactionResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByTitle">
+			<wsdl:input message="tns:getPropertyIdsByTitleRequest" name="getPropertyIdsByTitleRequest"/>
+			<wsdl:output message="tns:getPropertyIdsByTitleResponse" name="getPropertyIdsByTitleResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsBySection">
+			<wsdl:input message="tns:getPropertyIdsBySectionRequest" name="getPropertyIdsBySectionRequest"/>
+			<wsdl:output message="tns:getPropertyIdsBySectionResponse" name="getPropertyIdsBySectionResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PropertyServiceSoap11" type="tns:PropertyService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getStreetList">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getStreetListRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getStreetListResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByExternalReference">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByExternalReferenceRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByExternalReferenceResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertySummaryListByNameSuburb">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertySummaryListByNameSuburbRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertySummaryListByNameSuburbResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsBySurveyPlan">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsBySurveyPlanRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsBySurveyPlanResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyProfileReport">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyProfileReportRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyProfileReportResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdFromEPReference">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdFromEPReferenceRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdFromEPReferenceResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByRadius">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByRadiusRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByRadiusResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPDFAVM">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPDFAVMRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPDFAVMResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyCoordinates">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyCoordinatesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyCoordinatesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getHybridPDFAVM">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getHybridPDFAVMRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getHybridPDFAVMResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByPropertyRadius">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByPropertyRadiusRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByPropertyRadiusResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAVM">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getAVMRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAVMResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSuggestionList">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getSuggestionListRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getSuggestionListResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsForAddress">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsForAddressRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsForAddressResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsForCompany">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsForCompanyRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsForCompanyResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="doneCMA">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="doneCMARequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="doneCMAResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyAddressListFromSuggestion">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyAddressListFromSuggestionRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyAddressListFromSuggestionResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByNearestNeighbour">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByNearestNeighbourRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByNearestNeighbourResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByTitleVolFolio">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByTitleVolFolioRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByTitleVolFolioResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getConfigAVM">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getConfigAVMRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getConfigAVMResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="refineProperties">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="refinePropertiesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="refinePropertiesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByPlan">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByPlanRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByPlanResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertySummaryList">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertySummaryListRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertySummaryListResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getLookupValues">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getLookupValuesRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getLookupValuesResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByName">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByNameRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByNameResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getRismarkAVM">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getRismarkAVMRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getRismarkAVMResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsForArea">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsForAreaRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsForAreaResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertySummary">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertySummaryRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertySummaryResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyDetail">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyDetailRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyDetailResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAvailableAttributesForPropertyIds">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getAvailableAttributesForPropertyIdsRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAvailableAttributesForPropertyIdsResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getHybridAVM">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getHybridAVMRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getHybridAVMResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdListFromSuggestion">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdListFromSuggestionRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdListFromSuggestionResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAddressMatch">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getAddressMatchRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAddressMatchResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="doneTransaction">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="doneTransactionRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="doneTransactionResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsByTitle">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsByTitleRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsByTitleResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPropertyIdsBySection">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPropertyIdsBySectionRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPropertyIdsBySectionResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PropertyServiceService">
+		<wsdl:port binding="tns:PropertyServiceSoap11" name="PropertyServiceSoap11">
+			<soap:address location="http://localhost:6900/rpdata_property_service/action"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
