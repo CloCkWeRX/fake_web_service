@@ -11,4 +11,5 @@ FakeWebService::Application.routes.draw do
   get '/google_calendar/event_details/*all' => 'google_calendar#events'
   delete '/google_calendar/events/*all' => 'google_calendar#events'
   post '/google_calendar/publish/*all' => 'google_calendar#publish'
+  get '/health_check' => 'application#health_check'
 end
