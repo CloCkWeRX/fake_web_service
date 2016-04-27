@@ -33,4 +33,20 @@ class VmsController < ApplicationController
     render xml: DEFAULT_OK_RESPONSE and return
   end
 
+  soap_action 'addNote',
+    args: [:string],
+    return: :string
+  def addNote
+    render xml: DEFAULT_OK_RESPONSE and return
+  end
+
+  soap_action 'feeChangeRequest',
+    args: [:string],
+    return: :string
+  def feeChangeRequest
+    render xml: DEFAULT_OK_RESPONSE and return
+  end
+
+  
+
 end
