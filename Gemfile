@@ -13,15 +13,10 @@ gem 'wash_out', git: 'https://github.com/CloCkWeRX/wash_out.git'
 
 group :test, :development do
   gem 'bundler-audit'
-  gem 'timecop'
-  gem 'rspec'
-  gem 'rack-test'
-  gem 'rspec-mocks'
   gem 'factory_girl'
   gem 'pry', require: 'pry'
   gem 'pry-nav'
   gem 'ci_tasks', git: 'git@bitbucket.org:herron_todd_white/ci_tasks.git'
-  gem 'simplecov'
   gem 'vcr'
 end
 
@@ -32,8 +27,4 @@ group :development do
   gem 'ruby_gntp'
   gem 'guard-rack'
   gem 'shotgun'
-end
-
-group :test do
-  gem 'webmock'
 end
