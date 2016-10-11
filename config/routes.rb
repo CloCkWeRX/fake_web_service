@@ -8,6 +8,9 @@ FakeWebService::Application.routes.draw do
   get '/smsglobal/http-api.php' => 'smsglobal#index'
   post '/smsglobal/http-api.php' => 'smsglobal#index'
 
+  get '/smsbroadcast/' => 'smsbroadcast#index'
+  post '/smsbroadcast/' => 'smsbroadcast#index'
+
   get '/google_calendar/event_details/*all' => 'google_calendar#events'
   delete '/google_calendar/events/*all' => 'google_calendar#events'
   post '/google_calendar/publish/*all' => 'google_calendar#publish'
