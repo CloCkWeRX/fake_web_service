@@ -159,4 +159,11 @@ class ValexController < ApplicationController
   def update
     render soap: "0" and return
   end
+
+  soap_action "submitJobNotes",
+              args: [:string],
+              return: :string
+  def submitJobNotes
+    render soap: "0" and return
+  end
 end
