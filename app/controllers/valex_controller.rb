@@ -66,13 +66,24 @@ class ValexController < ApplicationController
            <?xml version="1.0" encoding="UTF-8"?>
 
             <settings>
-
               <ValExID>#{params[:valexId]}</ValExID>
-
               <communicationPath>client</communicationPath>
-
               <documentationPath>client</documentationPath>
-
+              <currentStatus>Delay</currentStatus>
+              <supportedOnlineReport>false</supportedOnlineReport>
+              <clientSupportedDelaysForVMS>
+                <Delay id="14" description="Access Issues">true</Delay>
+                <Delay id="18" description="Cancellation Request">true</Delay>
+                <Delay id="20" description="Fee Approval">true</Delay>
+                <Delay id="13" description="Inspection Contacting Issues">true</Delay>
+                <Delay id="16" description="Insufficient Documentation (Client/Lender/Broker to Provide)">true</Delay>
+                <Delay id="15" description="Property Identification">true</Delay>
+                <Delay id="9" description="Request is Outside of Lender policy">true</Delay>
+                <Delay id="19" description="Request to Change Service Type">true</Delay>
+                <Delay id="22" description="Request to Change Service Type and Higher Fee Approval">true</Delay>
+                <Delay id="17" description="Other">true</Delay>
+                <Delay id="4" description="Next visit to Location">true</Delay>
+              </clientSupportedDelaysForVMS>
             </settings>
          </responseMessage>
 
