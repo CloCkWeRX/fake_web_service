@@ -1,4 +1,4 @@
-class SmsglobalController < ApplicationController
+class SmsbroadcastController < ApplicationController
   def index
     if params["to"] == "0433391674"
       render text: "ERROR: Username or password is incorrect."
