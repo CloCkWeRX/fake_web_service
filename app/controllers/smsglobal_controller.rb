@@ -1,4 +1,6 @@
 class SmsglobalController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def index
     if params["to"] == "0433391674"
       render text: "ERROR: 88"
