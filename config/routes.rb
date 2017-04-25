@@ -15,4 +15,6 @@ FakeWebService::Application.routes.draw do
 
   post '/hova/jobs/:id/update_job' => 'hova#update_job'
   # /hova/jobs/4561/update_job
+
+  get '/buddy/api/2/make_call' => 'buddy#make_call'
 end
