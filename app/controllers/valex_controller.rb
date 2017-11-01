@@ -142,9 +142,9 @@ class ValexController < ApplicationController
     if inspection_date
       appointment_in_advance_comment = status_update.xpath("//WorkFlow/Comment").first
       is_future_date = DateTime.parse(inspection_date.to_s) > 3.days.from_now
-      if is_future_date
-        unless appointment_in_advance_comment.to_s.length > 0
-          raise "Appointment made in advance. Valid Reason code or comment not supplied"
+      if is_future_date && appointment_in_advance_comment
+        unless appointment_in_advance_comment.text.length > 0
+          raise SOAPError, "Appointment made in advance. Valid Reason code or comment not supplied"
         end
       end
     end
