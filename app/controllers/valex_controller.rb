@@ -130,8 +130,24 @@ class ValexController < ApplicationController
               args: [:string],
               return: :string
   def statusUpdate
-    # raw_payload = env['wash_out.soap_data']
-    # notifications = raw_payload[:Envelope][:Body][:notificationList][:notification]
+    raw_payload = env['wash_out.soap_data']
+
+    body = raw_payload[:Envelope][:Body]
+    status_update = Nokogiri::XML(body[:statusUpdate][:valuationMessage])
+
+
+    # is this a Schedule/Appointment Made packet?
+    inspection_date = status_update.xpath("//DateOfInspection/Date").first
+
+    if inspection_date
+      appointment_in_advance_comment = status_update.xpath("//WorkFlow/Comment").first
+      is_future_date = DateTime.parse(inspection_date.to_s) > 3.days.from_now
+      if is_future_date
+        unless appointment_in_advance_comment.to_s.length > 0
+          raise "Appointment made in advance. Valid Reason code or comment not supplied"
+        end
+      end
+    end
 
     render soap: '0'
   end
