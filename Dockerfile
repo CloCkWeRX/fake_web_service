@@ -20,3 +20,7 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 COPY . /myapp
+
+# Clean up keys
+RUN rm /root/.ssh/id_rsa
+RUN rm /myapp/id_rsa
