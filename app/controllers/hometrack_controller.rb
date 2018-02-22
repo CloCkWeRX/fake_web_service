@@ -1,6 +1,16 @@
 class HometrackController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
+  before_action :authenticate!
+  def authenticate!
+    username_matched = request.headers.env['HTTP_X_USERNAME'] == 'test'
+    password_matched = request.headers.env['HTTP_X_PASSWORD'] == 'test'
+
+    return if username_matched && password_matched
+
+    render json: { errors: 'Invalid username/password combination.' }, status: :unauthorized
+  end
+
   # See https://hometrack.atlassian.net/wiki/spaces/FV/pages/40370177/CPB+ISD#CPBISD-WorkflowActionsWorkflowActions
 
   def accept_job
