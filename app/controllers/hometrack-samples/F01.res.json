@@ -1,0 +1,30 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "frontline",
+      "systemUserId": "john.smith"
+    },
+    "response": {
+      "code": "10001"
+    },
+    "job": {
+      "references": [{
+          "type": "lender",
+          "identifier": "LENDER-ABC-HEAD-OFFICE"
+        },
+        {
+          "type": "other",
+          "identifier": "EXTERNAL-REF-00JHFF1"
+        },
+        {
+          "type": "connectJobId",
+          "identifier": "427496"
+        }
+      ]
+    }
+  }
+}

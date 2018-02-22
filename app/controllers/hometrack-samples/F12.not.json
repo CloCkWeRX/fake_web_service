@@ -1,0 +1,14 @@
+See F12-0[1-6].
+
+Status updates:
+01. jobAccepted
+    jobAmended (see F13 with different notification type but same content)
+02. jobAssigned
+03. jobCancelled
+    jobCompleted (see F13)
+    jobDelayed (see VST34)
+04. jobEscalated
+05. jobInProgress
+06. jobInspected
+    jobQueried (see VF32)
+    jobUpdated (see F10 and F11)

@@ -1,0 +1,154 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "job": {
+      "references": [{
+          "type": "lender",
+          "identifier": "LENDER-ABC-HEAD-OFFICE"
+        },
+        {
+          "type": "other",
+          "identifier": "EXTERNAL-REF-00JHFF1"
+        },
+        {
+          "type": "connectJobId",
+          "identifier": "427496"
+        }
+      ],
+      "priority": {
+        "value": "high",
+        "dueDate": "2017-10-27"
+      },
+      "status": {
+        "currentStatus": "inspected",
+        "timestamp": "2017-10-27T05:55:58.998Z"
+      },
+      "property": {
+        "address": {
+          "buildingName": "",
+          "floorNumber": "",
+          "lotNumber": "",
+          "postcode": "4170",
+          "state": "QLD",
+          "streetName": "thackeray",
+          "streetNumber": "42",
+          "streetType": "street",
+          "streetTypeSuffix": "",
+          "suburb": "norman park",
+          "unitNumber": ""
+        },
+        "characteristics": {
+          "bathrooms": "1",
+          "bedrooms": "2",
+          "carspaces": "2",
+          "floorArea": "400",
+          "floorPlate": "2",
+          "floors": "2",
+          "landArea": "400",
+          "livingArea": "273",
+          "yearBuilt": "1968",
+          "type": "house",
+          "subtype": "unit",
+          "offThePlan": "false",
+          "status": "established",
+          "tenantType": "leaseHoldSingle"
+        },
+        "title": {
+          "isPrimary": "true"
+        }
+      },
+      "documents": [{
+        "description": "title document from applicant",
+        "fileName": "titledoc",
+        "format": "pdf",
+        "identifier": "LND02441-TITLE3441",
+        "connectDocumentId": "abc-1",
+        "type": "titleCertificate"
+      }],
+      "loan": {
+        "estimateType": "customerEstimate",
+        "estimatedValue": "650000"
+      },
+      "fee": {
+          "amount": 280.00,
+          "originalAmount": 280.00,
+          "description": "panel fees"
+      },
+      "parties": [{
+          "address": {
+            "buildingName": "Central Hall",
+            "floorNumber": "3",
+            "lotNumber": "23242",
+            "postcode": "2218",
+            "state": "NSW",
+            "streetName": "Illawarra",
+            "streetNumber": "23-25",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "Allawah",
+            "unitNumber": ""
+          },
+          "businessUnitName": "retail lendings",
+          "comment": "darling harbour branch",
+          "companyName": "xyz",
+          "contactFirstName": "James",
+          "contactJobTitle": "Mortgage broker",
+          "contactLastName": "Smith",
+          "email": "LND02441@xyz.com",
+          "identifier": "LND02441",
+          "phone": {
+            "fax": "+61280608020",
+            "home": "+61280608020",
+            "mobile": "+61426246142",
+            "work": "+61280608020"
+          },
+          "type": "lender"
+        },
+        {
+          "address": {
+            "buildingName": "",
+            "floorNumber": "3",
+            "lotNumber": "23242",
+            "postcode": "2218",
+            "state": "NSW",
+            "streetName": "Illawarra",
+            "streetNumber": "23-25",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "Allawah",
+            "unitNumber": "10"
+          },
+          "comment": "",
+          "contactFirstName": "Riley",
+          "contactLastName": "Smith",
+          "email": "APP02441@xyz.com",
+          "identifier": "APP02441",
+          "phone": {
+            "fax": "+61280608020",
+            "home": "+61280608020",
+            "mobile": "+61426246142",
+            "work": "+61280608020"
+          },
+          "type": "applicant"
+        }
+      ],
+      "report": {
+        "group": "residential",
+        "subType": "established",
+        "template": "hometrackvaluer",
+        "type": "desktop"
+      },
+      "note": {
+        "type": "specialInstruction",
+        "comment": "Can you please take into account that I just retiled the bathrooms"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "hawk",
+      "systemUserId": "jo.jo"
+    },
+    "action": "submitAmendedValuation",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "valuation": "TBD"
+    }
+  }
+}

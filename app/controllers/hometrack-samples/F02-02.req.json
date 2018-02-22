@@ -1,0 +1,47 @@
+// Remove an applicant from the job.
+
+{
+  "hometrack": {
+    "version": "1.0",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "frontline",
+      "systemUserId": "john.smith"
+    },
+    "action": "updateJob",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "parties": [{
+        "address": {
+          "buildingName": "",
+          "floorNumber": "3",
+          "lotNumber": "23242",
+          "postcode": "2218",
+          "state": "NSW",
+          "streetName": "Illawarra",
+          "streetNumber": "23-25",
+          "streetType": "street",
+          "streetTypeSuffix": "",
+          "suburb": "Allawah",
+          "unitNumber": "10"
+        },
+        "comment": "",
+        "contactFirstName": "George",
+        "contactLastName": "Smith",
+        "email": "APP02442@xyz.com",
+        "identifier": "APP02442",
+        "phone": {
+          "fax": "+61280608020",
+          "home": "+61280608020",
+          "mobile": "+61426246142",
+          "work": "+61280608020"
+        },
+        "type": "applicant"
+      }]
+    }
+  }
+}

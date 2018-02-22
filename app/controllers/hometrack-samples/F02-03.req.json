@@ -1,0 +1,23 @@
+// Remove all applicants. Submit with "type" present and no other fields.
+
+{
+  "hometrack": {
+    "version": "1.0",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "frontline",
+      "systemUserId": "john.smith"
+    },
+    "action": "updateJob",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "parties": [{
+        "type": "applicant"
+      }]
+    }
+  }
+}

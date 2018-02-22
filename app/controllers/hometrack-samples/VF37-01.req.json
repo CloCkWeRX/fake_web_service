@@ -1,0 +1,47 @@
+// The following search shows all high priority jobs that have been accepted by
+// the requesting party (but not yet assigned to a valuer) in Norman Park, QLD.
+
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "action": "searchJobs",
+    "search": {
+      "status": {
+        "currentStatus": "accepted"
+      },
+      "priority": {
+        "value": "high",
+        "dueDate": "2017-10-27"
+      },
+      "property": {
+        "address": {
+          "suburb": "norman park",
+          "state": "QLD"
+        }
+      }
+    },
+    "data": {
+      "references": true,
+      "priority": true,
+      "property": {
+        "address": true,
+        "characteristics": false,
+        "title": false
+      },
+      "documents": false,
+      "loan": false,
+      "parties": false,
+      "report": false,
+      "fee": false,
+      "notes": false,
+      "status": true,
+      "valuation": false
+    }
+  }
+}

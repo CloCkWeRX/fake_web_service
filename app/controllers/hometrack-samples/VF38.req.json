@@ -1,0 +1,112 @@
+{
+  "hometrack": {
+    "version": "1.0",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "action": "createTestInstruction",
+    "job": {
+      "references": [{
+          "type": "lender",
+          "identifier": "LENDER-ABC-HEAD-OFFICE"
+        },
+        {
+          "type": "other",
+          "identifier": "EXTERNAL-REF-00JHFF1"
+        }
+      ],
+      "priority": {
+        "value": "high",
+        "dueDate": "2017-10-27"
+      },
+      "property": {
+        "address": {
+          "postcode": "4170",
+          "state": "QLD",
+          "streetName": "thackeray",
+          "streetNumber": "42",
+          "streetType": "street",
+          "streetTypeSuffix": "",
+          "suburb": "norman park"
+        }
+      },
+      "loan": {
+        "estimateType": "customerEstimate",
+        "estimatedValue": "650000"
+      },
+      "parties": [{
+          "address": {
+            "buildingName": "Central Hall",
+            "floorNumber": "3",
+            "lotNumber": "23242",
+            "postcode": "2218",
+            "state": "NSW",
+            "streetName": "Illawarra",
+            "streetNumber": "23-25",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "Allawah",
+            "unitNumber": ""
+          },
+          "businessUnitName": "retail lendings",
+          "comment": "darling harbour branch",
+          "companyName": "xyz",
+          "contactFirstName": "James",
+          "contactJobTitle": "Mortgage broker",
+          "contactLastName": "Smith",
+          "email": "LND02441@xyz.com",
+          "identifier": "LND02441",
+          "phone": {
+            "fax": "+61280608020",
+            "home": "+61280608020",
+            "mobile": "+61426246142",
+            "work": "+61280608020"
+          },
+          "type": "lender"
+        },
+        {
+          "address": {
+            "buildingName": "",
+            "floorNumber": "3",
+            "lotNumber": "23242",
+            "postcode": "2218",
+            "state": "NSW",
+            "streetName": "Illawarra",
+            "streetNumber": "23-25",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "Allawah",
+            "unitNumber": "10"
+          },
+          "comment": "",
+          "contactFirstName": "Riley",
+          "contactLastName": "Smith",
+          "email": "APP02441@xyz.com",
+          "identifier": "APP02441",
+          "phone": {
+            "fax": "+61280608020",
+            "home": "+61280608020",
+            "mobile": "+61426246142",
+            "work": "+61280608020"
+          },
+          "type": "applicant"
+        },
+        {
+          "businessUnitName": "normanPark",
+          "companyName": "valFirmX",
+          "identifier": "VF02441",
+          "type": "valFirm"
+        }
+      ],
+      "report": {
+        "group": "residential",
+        "subType": "established",
+        "template": "hometrackvaluer",
+        "type": "desktop"
+      }
+    }
+  }
+}

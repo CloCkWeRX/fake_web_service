@@ -1,0 +1,35 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "action": "getJob",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }]
+    },
+    "data": {
+      "references": true,
+      "priority": true,
+      "property": {
+        "address": true,
+        "characteristics": false,
+        "title": false
+      },
+      "documents": true,
+      "loan": true,
+      "parties": true,
+      "report": true,
+      "fee": true,
+      "notes": true,
+      "status": true,
+      "valuation": true
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "notification": {
+      "type": "jobAssigned",
+      "job": {
+        "status": {
+          "fromStatus": "accepted",
+          "currentStatus": "assigned",
+          "timestamp": "2017-10-27T05:55:58.998Z"
+        },
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ],
+        "parties": [{
+          "address": {
+            "buildingName": "Central Hall",
+            "floorNumber": "3",
+            "lotNumber": "23242",
+            "postcode": "2218",
+            "state": "NSW",
+            "streetName": "Illawarra",
+            "streetNumber": "23-25",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "Allawah",
+            "unitNumber": ""
+          },
+          "businessUnitName": "Tamworth",
+          "comment": "",
+          "companyName": "valFirm",
+          "contactFirstName": "Joe",
+          "contactJobTitle": "Senior Valuer",
+          "contactLastName": "Smith",
+          "email": "joe.smith@valfirm.com",
+          "identifier": "VAL02441",
+          "phone": {
+            "fax": "+61280608020",
+            "home": "+61280608020",
+            "mobile": "+61426246142",
+            "work": "+61280608020"
+          }
+        }]
+      }
+    }
+  }
+}

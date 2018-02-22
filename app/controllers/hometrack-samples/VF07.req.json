@@ -1,0 +1,22 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "joe.smith"
+    },
+    "action": "declineJob",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "note": {
+        "type": "conflictOfInterest",
+        "comment": "We did the initial pre-build vals on this property."
+      }
+    }
+  }
+}
