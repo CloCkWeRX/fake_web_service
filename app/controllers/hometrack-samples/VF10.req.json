@@ -1,0 +1,2 @@
+See F02
+Logic: If party/"type" is same, then overwrite party. If more than 1 valuer, then send both in same update.

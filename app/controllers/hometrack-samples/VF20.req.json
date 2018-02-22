@@ -1,0 +1,30 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "action": "updateJob",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "documents": [{
+        "description": "title document from applicant",
+        "fileName": "titledoc",
+        "format": "pdf",
+        "identifier": "LND02441-TITLE3441",
+        "type": "titleCertificate",
+        "url": "https://titledoc-lnd02441.valFirm.com/title/title.pdf?SECURITYTOKEN"
+      }],
+      "note": {
+        "type": "comment",
+        "comment": "I have obtained the title document."
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "notification": {
+      "type": "queryJobResponse",
+      "job": {
+        "notes": [{
+          "action": "respondToQuery",
+          "timestamp": "2017-10-27T05:55:58.998Z",
+          "type": "agree",
+          "systemId": "hawk.valuer.au",
+          "systemUserId": "joe.smith",
+          "comment": "We will change the value to $850K"
+        }],
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ]
+      }
+    }
+  }
+}

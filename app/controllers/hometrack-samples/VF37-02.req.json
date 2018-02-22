@@ -1,0 +1,66 @@
+// The following search shows some of the meta and query operators avaialable.
+
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "action": "searchJobs",
+    "search": {
+      "meta": {
+        "created": {
+          "between": ["2017-10-25", "2017-10-28"]
+        },
+        "updated": {
+          "between": ["2017-10-27", "2017-10-29"]
+        }
+      },
+      "references": [{
+        "type": "lender",
+        "identifier": {
+          "like": "*-ABC-HEAD-*"
+        }
+      }],
+      "status": {
+        "currentStatus": {
+          "in": ["accepted", "initial"]
+        }
+      },
+      "priority": {
+        "value": "high",
+        "dueDate": {
+          "between": ["2017-10-27", "2017-10-29"]
+        }
+      },
+      "property": {
+        "address": {
+          "suburb": {
+            "in": ["norman park", "morningside"]
+          },
+          "state": "QLD"
+        }
+      }
+    }
+  },
+  "data": {
+    "references": true,
+    "priority": true,
+    "property": {
+      "address": true,
+      "characteristics": false,
+      "title": false
+    },
+    "documents": false,
+    "loan": false,
+    "parties": false,
+    "report": false,
+    "fee": false,
+    "notes": false,
+    "status": true,
+    "valuation": false
+  }
+}

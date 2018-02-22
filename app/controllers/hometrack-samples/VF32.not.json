@@ -1,0 +1,38 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "notification": {
+      "type": "jobQueried",
+      "job": {
+        "status": {
+          "fromStatus": "valuationCompleted",
+          "currentStatus": "amendmentRequired",
+          "timestamp": "2017-10-27T05:55:58.998Z"
+        },
+        "notes": [{
+          "action": "queryJobRequest",
+          "timestamp": "2017-10-27T05:55:58.998Z",
+          "type": "nonValueQuery",
+          "systemId": "frontline",
+          "systemUserId": "john.smith",
+          "comment": "can you confirm the property has only 3 bedrooms?"
+        }],
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ]
+      }
+    }
+  }
+}

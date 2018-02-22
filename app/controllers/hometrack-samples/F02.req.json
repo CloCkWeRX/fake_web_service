@@ -1,0 +1,15 @@
+Anything in "job" can be updated by a user with the correct permissions. The
+whole block must be provided, and it will override whatever was previously
+contained in the block. The "references", "documents", and "parties" arrays
+require only that the items of the same "type" be provided, not the whole array.
+
+For "references" and "documents" each array can only have 1 of each relevant
+"type" enumeration. Including another of that type will overwrite the first
+value.
+
+"Parties" can have multiples of the same "type", but these must all be provided
+in a single update. i.e. to link applicants as related parties to a job you must
+provide all applicants. If a change needs to be made to one applicant (to
+update a phone number for example), both applicants would have to be sent again.
+
+See F02-0[1-5].

@@ -1,0 +1,63 @@
+// The notification will match the updates made in F02. The "references" array
+// will always be provided in notifications, changed or not. The "documents" and
+// "parties" arrays will contain all old and new array elements, if something
+// is added or edited.
+
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "notification": {
+      "type": "jobUpdated",
+      "job": {
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ],
+        "property": {
+          "address": {
+            "buildingName": "",
+            "floorNumber": "",
+            "lotNumber": "",
+            "postcode": "4170",
+            "state": "QLD",
+            "streetName": "thackeray",
+            "streetNumber": "32",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "norman park",
+            "unitNumber": ""
+          },
+          "documents": [{
+              "description": "title document from applicant",
+              "fileName": "titledoc",
+              "format": "pdf",
+              "identifier": "LND02441-TITLE3441",
+              "connectDocumentId": "abc-1",
+              "type": "titleCertificate"
+            },
+            {
+              "description": "contract of sale",
+              "fileName": "saleContract",
+              "format": "pdf",
+              "identifier": "LND02441-cos3441",
+              "connectDocumentId": "abc-2",
+              "type": "contractOfSale",
+              "url": "https://saleContract-lnd02441.cbadocstorage.com/cos/saleContract.pdf?SECURITYTOKEN"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "notification": {
+      "type": "jobDelayed",
+      "job": {
+        "status": {
+          "fromStatus": "inProgress",
+          "currentStatus": "delayed",
+          "timestamp": "2017-10-27T05:55:58.998Z"
+        },
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ],
+        "notes": [{
+          "action": "reportDelay",
+          "systemId": "valFirmSystem",
+          "systemUserId": "jo.jo",
+          "type": "delay",
+          "comment": "The lender needs to provide new contact details. I cannot get in touch with the access provider."
+        }]
+      }
+    }
+  }
+}

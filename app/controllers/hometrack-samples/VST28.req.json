@@ -1,0 +1,27 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "tbd",
+      "systemUserId": "sam.quill"
+    },
+    "action": "reallocateJob",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "note": {
+        "type": "reallocateJob",
+        "comment": "The desired fee is totally unreasonable. A different firm should be selected."
+      },
+      "parties": [{
+        "companyName": "valFirmX",
+        "identifier": "VF02441",
+        "type": "valFirm"
+      }]
+    }
+  }
+}

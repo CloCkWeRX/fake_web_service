@@ -1,0 +1,127 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "frontline",
+      "systemUserId": "john.smith"
+    },
+    "response": {
+      "code": "10001"
+    },
+    "search": [{
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ],
+        "priority": {
+          "value": "high",
+          "dueDate": "2017-10-27"
+        },
+        "property": {
+          "address": {
+            "buildingName": "",
+            "floorNumber": "",
+            "lotNumber": "",
+            "postcode": "4170",
+            "state": "QLD",
+            "streetName": "thackeray",
+            "streetNumber": "42",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "norman park",
+            "unitNumber": ""
+          }
+        },
+        "status": {
+          "currentStatus": "accepted"
+        }
+      },
+      {
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ],
+        "priority": {
+          "value": "high",
+          "dueDate": "2017-10-27"
+        },
+        "property": {
+          "address": {
+            "buildingName": "",
+            "floorNumber": "",
+            "lotNumber": "",
+            "postcode": "4170",
+            "state": "QLD",
+            "streetName": "thackeray",
+            "streetNumber": "42",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "norman park",
+            "unitNumber": ""
+          }
+        },
+        "status": {
+          "currentStatus": "accepted"
+        }
+      },
+      {
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ],
+        "priority": {
+          "value": "high",
+          "dueDate": "2017-10-27"
+        },
+        "property": {
+          "address": {
+            "buildingName": "",
+            "floorNumber": "",
+            "lotNumber": "",
+            "postcode": "4170",
+            "state": "QLD",
+            "streetName": "thackeray",
+            "streetNumber": "42",
+            "streetType": "street",
+            "streetTypeSuffix": "",
+            "suburb": "norman park",
+            "unitNumber": ""
+          }
+        },
+        "status": {
+          "currentStatus": "accepted"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "action": "reportAppointmentBooked",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "appointment": {
+        "date": "2017-10-29"
+      },
+      "note": {
+        "type": "appointmentBooked",
+        "comment": "FINALLY BOOKED!!!!"
+      }
+    }
+  }
+}

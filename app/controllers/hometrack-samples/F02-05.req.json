@@ -1,0 +1,39 @@
+// Add carspaces which was previosuly not supplied. Note that you must supply
+// all the sibiling attributes for the block been updated.
+
+{
+  "hometrack": {
+    "version": "1.0",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "frontline",
+      "systemUserId": "john.smith"
+    },
+    "action": "updateJob",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "property": {
+        "characteristics": {
+          "carspaces": "2",
+          "bathrooms": "1",
+          "bedrooms": "2",
+          "floorArea": "400",
+          "floorPlate": "2",
+          "floors": "2",
+          "landArea": "400",
+          "livingArea": "273",
+          "yearBuilt": "1968",
+          "type": "house",
+          "subtype": "unit",
+          "offThePlan": "false",
+          "status": "established",
+          "tenantType": "leaseHoldSingle"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "notification": {
+      "type": "jobUpdated",
+      "job": {
+        "notes": [{
+          "action": "addJobNote",
+          "type": "enquiry",
+          "timestamp": "2018-01-01T09:29:00.000Z",
+          "systemId": "hawk.valuer.au",
+          "systemUserId": "joe.smith",
+          "comment": "when can this job be completed?"
+        }],
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ]
+      }
+    }
+  }
+}

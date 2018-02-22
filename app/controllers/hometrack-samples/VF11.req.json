@@ -1,0 +1,26 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "cba",
+      "systemId": "valFirmSystem",
+      "systemUserId": "jo.jo"
+    },
+    "action": "feeChangeRequest",
+    "job": {
+      "references": [{
+        "type": "connectJobId",
+        "identifier": "427496"
+      }],
+      "fee": {
+        "requestAmount": 3123.00,
+        "description": "requestedFee"
+      },
+      "note": {
+        "type": "withinDelegatedAuthority",
+        "comment": "We need to fly someone up to do this valuation and pay for them to stay overnight."
+      }
+    }
+  }
+}

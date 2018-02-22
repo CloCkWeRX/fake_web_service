@@ -1,0 +1,15 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "audit": {
+      "clientId": "abc",
+      "systemId": "xyz",
+      "systemUserId": "some.user"
+    },
+    "response": {
+      "code": "10001"
+    }
+  }
+}

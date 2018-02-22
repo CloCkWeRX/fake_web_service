@@ -1,0 +1,34 @@
+{
+  "hometrack": {
+    "version": 1.0,
+    "terms": "https://tbd",
+    "timestamp": "2017-10-27T05:55:58.998Z",
+    "notification": {
+      "type": "jobInProgress",
+      "job": {
+        "status": {
+          "fromStatus": "assigned",
+          "currentStatus": "inProgress",
+          "timestamp": "2017-10-27T05:55:58.998Z"
+        },
+        "references": [{
+            "type": "lender",
+            "identifier": "LENDER-ABC-HEAD-OFFICE"
+          },
+          {
+            "type": "other",
+            "identifier": "EXTERNAL-REF-00JHFF1"
+          },
+          {
+            "type": "connectJobId",
+            "identifier": "427496"
+          }
+        ],
+        "appointment": {
+          "date": "2017-10-29",
+          "timestamp":"2017-10-27T05:55:58.998Z"
+        }
+      }
+    }
+  }
+}
